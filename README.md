@@ -13,7 +13,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/ofandoud/ITI-Graduation-Project">
-    <img src="images/logo-devops.png" alt="Logo" width="80" height="80">
+    <img src="images/logo-devops.png" alt="Logo" width="150" height="150">
   </a>
 
   <h3 align="center">ITI-Graduation-Project</h3>
