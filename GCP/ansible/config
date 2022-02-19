@@ -1,0 +1,26 @@
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUVMRENDQXBTZ0F3SUJBZ0lRYSsrNVhPQnBVbDFOdXVlQVlaNGg0akFOQmdrcWhraUc5dzBCQVFzRkFEQXYKTVMwd0t3WURWUVFERXlRd01tTTROemt5WWkwMk9XSTJMVFJoTjJJdFltVmxPUzB5WVdWbE56QTRNbVk1WTJRdwpJQmNOTWpJd01qRTRNVEV6TURVMVdoZ1BNakExTWpBeU1URXhNak13TlRWYU1DOHhMVEFyQmdOVkJBTVRKREF5Cll6ZzNPVEppTFRZNVlqWXROR0UzWWkxaVpXVTVMVEpoWldVM01EZ3laamxqWkRDQ0FhSXdEUVlKS29aSWh2Y04KQVFFQkJRQURnZ0dQQURDQ0FZb0NnZ0dCQUx0RlNlYjJkWC9SR2RMbm9VVHhsRFp1a3hnNGhIeUZCWklkSktLNwoya0owSmtoSTRDYkdodmhmaWJVUHF3bmR0N0wwS09OTmdpWmh3YTVDWlplWUZNM21jTkd4V3RueFU5QjE5QmowCnB1U0FLbXFuOWx4d3JhQXRMVitBMmtxZkU0S0JLU2xEM3VaeUlQajZlbGpNMnNrd1lQNy96TklkTFVKRFd4Q2UKVUhmTkVLQVVxY3NiL0tkbDgrSDRxTldhOVk2emY2V2xIRVdOYWgzVmZFL3pJNzlsVitvREU4MHRmZVJPUkhBTgpXVFRGeTNPbElneFpDYWZWbUc0LzBqdmw3QnhxTldyUk4rbE5adEEyUklkQ2RvTUxUSXMwRExWVlhMYUk5SVVSCk1nUi9QRG5FaGorSVRuRUlvUlpYQVJEc3BoSFJGWU52QUg0bGZLV0dhS0VrUnBDc1FjS3IveGhZNDhKSDRscW8KV3M4Rkt4VzNiNDUvV1RyNmwzeXlHa28xRFhNU2JQUlluYmd1SWNaQ2RxbjVBdExYU05PbGZYZ05zcjZyL2VISQpDM3JjaWM5YjVJZHVDTEFOdlVlbFZuZHJvcXJ6OHNSNnZDQzBvTkY1bkZPWHhZMlJEUkw3Q0RVSlRLL29ManpGCndHbThMeGk3aThQR0dQOFB6a1VHS0JtNkV3SURBUUFCbzBJd1FEQU9CZ05WSFE4QkFmOEVCQU1DQWdRd0R3WUQKVlIwVEFRSC9CQVV3QXdFQi96QWRCZ05WSFE0RUZnUVVPVTBEa2tSTTFxOXZ4ZUp4NlFNT2xjVUNyaUF3RFFZSgpLb1pJaHZjTkFRRUxCUUFEZ2dHQkFIUHVCUFNicGxQbVFudVFRWFZoQmwyTDRJMG5yV0VjM3R6R2Q2RC84Zkg1CkFpY2VnbzFINng1SUl2VTJxc1lMRFlwTWhrZTNNcTJuZUpGVTBaaDU0YmtmVm9tL2IxQ3NpeXVvcFYweHdFLzAKOEU0SkZ2WS9BV29lUy9lQlZwbjFML2IxdXc3dzJhU3UxY0kvMXRTbU05S0ZrVVhPeERoYjlubjJ5c0VFUjUxZApmL1ZMVUJqVVhBTjNXTXhoZWx6Z2MrbzQ4c0JubVp3bUFOMnRCNlRQTGQ4UkQ3aTVWc0NIRVB5K0pubThJTjdZCmxVdlQxdWdyVDF3YVVWcEFOeEhvc1QzV2cvV0JwYVJYaTVzR2tnb0R3d1F1NWdRUWxuTW51QzMrV0lXRW9XeHIKUVZRMnpKdk1USzNTNE56SG5zdzFYY3BWbkkveHEvTnVFRXNEcEJPd0UyakRWOFhzV0ZTZTF2cDZ2bnlnK2ZLWQpDbldYb2JFNWljdm5semlLTmNTTmd1ZWlXTmEveUFqelR0ampRTHdXUDlzUHJQeXhleDhMQkxjNEVoemtGMWc0ClRXaEtoVzgrK1N0bzNxZERORTJNWW12VldzOTNVYlduZmE1K3VwV05YZ1NRUUE4enMrR1JNdXlna216UkVNMUoKcGlMM2FDYU14OXBDQkZCYkI2STFmZz09Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K
+    server: https://34.78.88.94
+  name: gke_gcp-iti-course-2021_europe-west1_gke-cluster
+contexts:
+- context:
+    cluster: gke_gcp-iti-course-2021_europe-west1_gke-cluster
+    user: gke_gcp-iti-course-2021_europe-west1_gke-cluster
+  name: gke_gcp-iti-course-2021_europe-west1_gke-cluster
+current-context: gke_gcp-iti-course-2021_europe-west1_gke-cluster
+kind: Config
+preferences: {}
+users:
+- name: gke_gcp-iti-course-2021_europe-west1_gke-cluster
+  user:
+    auth-provider:
+      config:
+        access-token: ya29.c.b0AXv0zTNMj4ZEB95yHPrud3apUipSwuWmcztsyjBSHMR6XmYv6SuKb1SnOonc2ieksFkQzo1b95B8sD-tkq82Xmvp90YE9lBm72GDcvHnUa0ibwu9tKPcHJRHy74c8W_CIsPc4AbnYCqtdALSh3P64U7TburNBWHEElEPDLPeP7S11JtKlY7XBTurQvujM4OCsmwuZr5wJQ.............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+        cmd-args: config config-helper --format=json
+        cmd-path: /snap/google-cloud-sdk/224/bin/gcloud
+        expiry: "2022-02-18T21:42:05Z"
+        expiry-key: '{.credential.token_expiry}'
+        token-key: '{.credential.access_token}'
+      name: gcp

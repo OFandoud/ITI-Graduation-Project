@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: jenkins-master
+  name: jenkins-master
+  namespace: jenkins
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jenkins-master
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: jenkins-master
+    spec:
+      containers:
+      - image: jenkins/jenkins:lts
+        name: jenkins
+        securityContext:
+          allowPrivilegeEscalation: false
+          runAsUser: 0  
+        ports: 
+        - containerPort: 8080
+        - containerPort: 50000
+          protocol: TCP
+        readinessProbe:
+          failureThreshold: 5
+          httpGet:
+            path: /login
+            port: 8080
+            scheme: HTTP
+        resources: {}
+        volumeMounts: 
+        - name: docker-sock
+          mountPath: /var/run/docker.sock
+        - name: jenkins-home
+          mountPath: /var/jenkins_home
+      volumes: 
+        - hostPath: 
+             path: /var/run/docker.sock
+             type: ""
+          name: docker-sock
+        
+        - name: jenkins-home
+          PersistentVolumeClaim:
+          claimName: jenkins-pvc
+        
+status: {}

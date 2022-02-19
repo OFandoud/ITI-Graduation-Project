@@ -1,0 +1,11 @@
+variable "name" {}
+variable "machine_type" {}
+variable "zone" {}
+variable "allowing_update" {}
+variable "image" {}
+variable "vpc_id" {}
+variable "subnet" {}
+variable "access_config" {}
+variable "metadata_startup_script" {}
+variable "email" {}
+variable "scopes" {}

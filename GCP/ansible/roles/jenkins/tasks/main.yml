@@ -1,0 +1,61 @@
+---
+- name: Connect to gke cluster 
+  become: true
+  shell: 'gcloud container clusters get-credentials gke-cluster --region europe-west1 --project gcp-iti-course-2021'
+
+- name: Creates directory
+  file:
+    path: /home/fandoud/jenkins_home
+    state: directory
+
+- name: copy files
+  copy:
+    src: .
+    dest: files/.
+
+- name: create namespace
+  k8s:
+    src: files/jenkins-ns.yaml
+    state: present
+
+- name: create jenkins pvc 
+  k8s:
+    src: files/jenkins-pvc.yaml
+    namespace: jenkins
+    state: present
+
+- name: deploy jenkins 
+  k8s:
+    src: files/jenkins.yaml
+    namespace: jenkins
+    state: present
+
+- name: create lb service
+  k8s:
+    src: files/jenkins-lb.yaml
+    namespace: jenkins
+    state: present
+
+- name: Pause for 1 minutes to build loadbalancer 
+  pause:
+    minutes: 1
+
+################## get lb link and jenkins ip ###############################
+
+- name: Get jenkins loadbalancer link 
+  shell: 'kubectl get svc -n jenkins | grep jenkins-lb-service'
+  register: link 
+
+- debug:
+    var: link.stdout_lines 
+  
+
+- name: Get jenkins security code to login 
+  shell: 'kubectl exec  $(kubectl get pods -n jenkins | grep jenkins-master | cut -d" " -f1) -n jenkins -- cat /var/jenkins_home/secrets/initialAdminPassword '
+  register: password
+
+- debug:
+    var: password.stdout_lines
+
+# - local_action: copy content=" {{link.stdout_lines , password.stdout_lines}}" dest=file
+

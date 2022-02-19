@@ -1,0 +1,96 @@
+---
+- name: install  python3
+  become: true
+  apt:
+    name:  python3
+# install docker 
+- name: Install packages that allow apt to be used over HTTPS
+  become: true
+  apt:
+      name: "{{ packages }}"
+      state: present
+      update_cache: yes
+  vars:
+      packages:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - gnupg-agent
+      - software-properties-common
+
+- name: Add an apt signing key for Docker
+  become: true
+  apt_key:
+      url: https://download.docker.com/linux/ubuntu/gpg
+      state: present
+
+- name: Add apt repository for stable version
+  apt_repository:
+      repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable
+      state: present
+
+- name: Install docker and its dependecies
+  apt: 
+    name: "{{ packages }}"
+    state: present
+    update_cache: yes
+  vars:
+      packages:
+      - docker-ce 
+      - docker-ce-cli 
+      - containerd.io
+
+# - name: Log into DockerHub
+#   command: docker login --username ofandoud --password **********
+
+############################################################## 
+
+- name: ensure pip3 is installed
+  become: true
+  apt:
+    name: python3-pip
+    cache_valid_time: "{{ apt_cache_valid_time|default(omit) }}"
+    install_recommends: no
+    state: latest
+    update_cache: yes
+
+
+# install kubectl 
+- name: get packages for kubectl 
+  become: true
+  shell: 'curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg'
+    
+- name: check packages for kubectl 
+  become: true
+  shell: 'echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list'
+
+
+- name: "Update Repository cache"
+  apt:
+    update_cache: true
+    cache_valid_time: 3600
+    force_apt_get: true   
+      
+- name: install  kubectl
+  become: true
+  apt:
+    name:  kubectl
+##################################################################
+
+# - name: install ansible using pip3
+#   shell: 'pip3 install ansible'
+
+# install jdk 
+- name: install jave 11
+  become: true
+  apt:
+    name: openjdk-11-jre-headless
+    state: latest
+
+###################################################################
+
+- name: install kubernates module
+  pip:
+    name: kubernetes
+    state: latest
+       

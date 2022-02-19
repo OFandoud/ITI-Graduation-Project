@@ -1,0 +1,7 @@
+- hosts: all
+  remote_user: fandoud
+  become: true
+  # become_method: sudo
+  roles:
+    - roles/dependencies
+    - roles/jenkins

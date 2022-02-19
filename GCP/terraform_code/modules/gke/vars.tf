@@ -1,0 +1,23 @@
+variable "name" {}
+variable "region" {}
+variable "vpc_id" {}
+variable "subnet" {}
+variable "remove_default_node_pool" {}
+variable "initial_node_count" {}
+variable "enable_private_endpoint" {}
+variable "enable_private_nodes" {}
+variable "master_ipv4_cidr_block" {}
+variable "cluster_ipv4_cidr_block" {}
+variable "services_ipv4_cidr_block" {}
+variable "cidr_block" {}
+variable "display_name" {}
+variable "pool_name" {}
+variable "pool_region" {}
+# variable "cluster_name" {}
+variable "node_count" {}
+variable "preemptible" {}
+variable "machine_type" {}
+variable "disk_size_gb" {}
+variable "disk_type" {}
+variable "sa" {}
+variable "oauth_scopes" {}
