@@ -66,8 +66,8 @@
 Deploy backend application on cloud provider `GCP - AWS` kubernetes cluster using CI/CD jenkins
 pipeline using the following steps:
 * Implement secure kubernetes cluster.
-* Deploy and configure jenkins on kubernetes using Ansinle.
-* Deploy backend application on kuberetes using jenkins piepline.
+* Deploy and configure jenkins on kubernetes using Ansible.
+* Deploy backend application on kuberetes using jenkins pipeline.
 
 Use the `Run.sh` to get started.
 
