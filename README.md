@@ -67,7 +67,7 @@ Deploy backend application on cloud provider `GCP - AWS` kubernetes cluster usin
 pipeline using the following steps:
 * Implement secure kubernetes cluster.
 * Deploy and configure jenkins on kubernetes using Ansible.
-* }reate a new pipeline job that listen to [github project][https://github.com/OFandoud/jenkins-test] throw webhook and run Jenkins file on slave.
+* }reate a new pipeline job that listen to [github project](https://github.com/OFandoud/jenkins-test) throw webhook and run Jenkins file on slave.
 * Deploy backend application on kuberetes using jenkins pipeline.
 
 Use the `Run.sh` to get started.
